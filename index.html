@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error-box, .love-box {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: #f8d7da;
+        border: 1px solid #f5c6cb;
+        border-radius: 5px;
+        text-align: center;
+      }
+      
+      .error-box button, .love-box button {
+        margin-top: 10px;
+      }
+      
+  </style>
+</head>
+<body>
+  <button onclick="showError()">Hi Babe &#128151; &nbsp; Click me &#128539;</button>
+
+  <div id="errorBox" class="error-box">
+    <span id="errorMessage"></span>
+    <button onclick="handleYes()">Yes</button>
+    <button onclick="handleNo()">No</button>
+  </div>
+
+  <div id="loveBox" class="love-box">
+    <span id="loveMessage"></span>
+    <button onclick="handleYes2()">Yes</button>
+    <button onclick="handleNo2()">No</button>
+  </div>
+
+  <script>
+    var noButtonClickCount = 0;
+
+function showError() {
+  var errorBox = document.getElementById("errorBox");
+  var errorMessage = document.getElementById("errorMessage");
+
+  errorMessage.textContent = "Do you love caabee?";
+
+  errorBox.style.display = "block";
+}
+
+function handleYes() {
+  var loveBox = document.getElementById("loveBox");
+  var loveMessage = document.getElementById("loveMessage");
+
+  loveMessage.textContent = "caabee wants more love";
+
+  loveBox.style.display = "block";
+}
+
+function handleNo() {
+  noButtonClickCount++;
+
+  if (noButtonClickCount === 3) {
+    alert("Please caabee is cutu, she wants love");
+  } else if (noButtonClickCount === 4) {
+    alert("You so bad bad");
+  } else if (noButtonClickCount < 3) {
+    alert("Please love me");
+  }
+}
+
+function handleYes2() {
+  alert("You so good good, caabee loves you");
+}
+
+function handleNo2() {
+  noButtonClickCount++;
+
+  if (noButtonClickCount === 3 || noButtonClickCount === 4) {
+    alert("Please caabee is cutu, she wants love");
+  } else if (noButtonClickCount === 5) {
+    alert("You so bad bad");
+  }
+}
+
+  </script>
+</body>
+</html>
